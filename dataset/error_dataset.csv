@@ -1,0 +1,172 @@
+id,language,code,error_type,category,severity,error_score,message,suggestion,fixed_code
+1,Python,print(total),UndefinedName,Name,MEDIUM,60,Name 'total' is not defined.,Define total before using it.,"total = 0
+print(total)"
+2,Python,print(username),UndefinedName,Name,MEDIUM,60,Name 'username' is not defined.,Define username before using it.,"username = 'Kanan'
+print(username)"
+3,Python,result = price + tax,UndefinedName,Name,MEDIUM,60,Name 'price' is not defined.,Define price before calculating result.,"price = 100
+result = price + tax"
+4,Python,print(score),UndefinedName,Name,MEDIUM,60,Name 'score' is not defined.,Define score before printing it.,"score = 0
+print(score)"
+5,Python,message = greeting + ' user',UndefinedName,Name,MEDIUM,60,Name 'greeting' is not defined.,Define greeting before using it.,"greeting = 'Hello'
+message = greeting + ' user'"
+6,Python,eval(user_input),DangerousFunction,Security,CRITICAL,90,Dangerous function 'eval()' detected.,Avoid eval() for untrusted input.,value = int(user_input)
+7,Python,exec(code),DangerousFunction,Security,CRITICAL,90,Dangerous function 'exec()' detected.,Avoid exec() when processing untrusted code.,Use explicit functions or a safe parser.
+8,Python,result = eval(expression),DangerousFunction,Security,CRITICAL,90,Dangerous function 'eval()' detected.,Use a safe parser for the expected expression.,Use a restricted expression parser.
+9,Python,exec(user_code),DangerousFunction,Security,CRITICAL,90,Dangerous function 'exec()' detected.,Do not execute arbitrary user input.,Validate and process the input explicitly.
+10,Python,value = eval(data),DangerousFunction,Security,CRITICAL,90,Dangerous function 'eval()' detected.,Replace eval() with a type-specific conversion.,value = int(data)
+11,Python,"def add_item(items=[]):
+    items.append(1)
+    return items",MutableDefaultArgument,Code Quality,MEDIUM,55,Mutable object used as a default function argument.,Use None and initialize the list inside the function.,"def add_item(items=None):
+    if items is None:
+        items = []
+    items.append(1)
+    return items"
+12,Python,"def collect(data={}):
+    data['x'] = 1",MutableDefaultArgument,Code Quality,MEDIUM,55,Mutable object used as a default function argument.,Use None as the default and create the dictionary inside.,"def collect(data=None):
+    if data is None:
+        data = {}
+    data['x'] = 1"
+13,Python,"def values(items=set()):
+    items.add(1)",MutableDefaultArgument,Code Quality,MEDIUM,55,Mutable object used as a default function argument.,Create the set inside the function.,"def values(items=None):
+    if items is None:
+        items = set()
+    items.add(1)"
+14,Python,"def cache(cache={}):
+    return cache",MutableDefaultArgument,Code Quality,MEDIUM,55,Mutable object used as a default function argument.,Use None and initialize cache inside the function.,"def cache(cache=None):
+    if cache is None:
+        cache = {}
+    return cache"
+15,Python,"try:
+    risky()
+except:
+    pass",BareExcept,Code Quality,LOW,30,Bare except detected.,Catch a specific exception or use Exception explicitly.,"try:
+    risky()
+except Exception:
+    pass"
+16,Python,"try:
+    x = 1 / 0
+except:
+    print('error')",BareExcept,Code Quality,LOW,30,Bare except detected.,Catch the expected exception.,"try:
+    x = 1 / 0
+except ZeroDivisionError:
+    print('error')"
+17,Python,"try:
+    data = int(value)
+except:
+    pass",BareExcept,Code Quality,LOW,30,Bare except detected.,Catch ValueError for invalid numeric input.,"try:
+    data = int(value)
+except ValueError:
+    pass"
+18,Python,"try:
+    open_file()
+except:
+    close_file()",BareExcept,Code Quality,LOW,30,Bare except detected.,Catch an appropriate exception type.,"try:
+    open_file()
+except Exception:
+    close_file()"
+19,Python,"list = [1, 2, 3]",BuiltinShadowing,Code Quality,LOW,25,Variable 'list' shadows a Python built-in.,Rename the variable.,"numbers = [1, 2, 3]"
+20,Python,str = 'hello',BuiltinShadowing,Code Quality,LOW,25,Variable 'str' shadows a Python built-in.,Rename the variable.,text = 'hello'
+21,Python,input = 10,BuiltinShadowing,Code Quality,LOW,25,Variable 'input' shadows a Python built-in.,Rename the variable.,user_input = 10
+22,Python,sum = 0,BuiltinShadowing,Code Quality,LOW,25,Variable 'sum' shadows a Python built-in.,Rename the variable.,total = 0
+23,Python,id = 100,BuiltinShadowing,Code Quality,LOW,25,Variable 'id' shadows a Python built-in.,Rename the variable.,person_id = 100
+24,Python,result = 10 / 0,DivisionByZero,Runtime,HIGH,80,Division by zero detected.,Check the divisor before division.,"if divisor != 0:
+    result = 10 / divisor"
+25,Python,answer = value / denominator,DivisionByZero,Runtime,HIGH,80,Possible division by zero.,Ensure denominator is not zero.,"if denominator != 0:
+    answer = value / denominator"
+26,Python,ratio = total / count,DivisionByZero,Runtime,HIGH,80,Possible division by zero when count is zero.,Validate count before division.,"if count != 0:
+    ratio = total / count"
+27,Python,average = total / n,DivisionByZero,Runtime,HIGH,80,Possible division by zero when n is zero.,Check n before calculating the average.,"if n != 0:
+    average = total / n"
+28,Python,result = 'Age: ' + age,PossibleTypeError,Type,HIGH,75,Possible TypeError: string and non-string values are combined.,Convert age to a string.,result = 'Age: ' + str(age)
+29,Python,total = number + text,PossibleTypeError,Type,HIGH,75,Possible TypeError from incompatible operand types.,Convert the values to compatible types.,total = number + int(text)
+30,Python,message = 10 + ' points',PossibleTypeError,Type,HIGH,75,Possible TypeError: integer and string cannot be added.,Convert the integer to a string.,message = str(10) + ' points'
+31,Python,value = '5' * 2.5,PossibleTypeError,Type,HIGH,75,Possible TypeError from an invalid multiplier type.,Use an integer multiplier or numeric conversion.,value = '5' * 2
+32,Python,"items = None
+print(len(items))",PossibleTypeError,Type,HIGH,75,Possible TypeError because None has no length.,Check that items is not None before calling len().,"if items is not None:
+    print(len(items))"
+33,Python,"import math
+print('hello')",UnusedImport,Code Quality,LOW,20,Imported module 'math' is not used.,Remove the unused import.,print('hello')
+34,Python,"import os
+x = 10",UnusedImport,Code Quality,LOW,20,Imported module 'os' is not used.,Remove the unused import.,x = 10
+35,Python,"from math import sqrt
+print(10)",UnusedImport,Code Quality,LOW,20,Imported name 'sqrt' is not used.,Remove the unused import.,print(10)
+36,Python,"import json
+name = 'Kanan'",UnusedImport,Code Quality,LOW,20,Imported module 'json' is not used.,Remove the unused import.,name = 'Kanan'
+37,Python,"while True:
+    print('running')",InfiniteLoop,Control Flow,HIGH,85,Potential infinite loop detected.,Add a termination condition or break.,"while condition:
+    print('running')"
+38,Python,"i = 0
+while i < 10:
+    print(i)",InfiniteLoop,Control Flow,HIGH,85,Loop variable is never updated.,Update i inside the loop.,"i = 0
+while i < 10:
+    print(i)
+    i += 1"
+39,Python,"running = True
+while running:
+    print('work')",InfiniteLoop,Control Flow,HIGH,85,Loop condition may never become false.,Update running or provide a break condition.,"running = True
+while running:
+    print('work')
+    running = False"
+40,Python,"n = 5
+while n > 0:
+    print(n)",InfiniteLoop,Control Flow,HIGH,85,Loop variable is never changed.,Decrease n inside the loop.,"n = 5
+while n > 0:
+    print(n)
+    n -= 1"
+41,Python,"print('start')
+break",BreakOutsideLoop,Control Flow,HIGH,80,Break statement is outside a loop.,Move break inside a for or while loop.,"for item in items:
+    if condition:
+        break"
+42,Python,"print('start')
+continue",ContinueOutsideLoop,Control Flow,HIGH,80,Continue statement is outside a loop.,Move continue inside a loop.,"for item in items:
+    if condition:
+        continue"
+43,Python,"if x > 10
+    print(x)",SyntaxError,Syntax,CRITICAL,95,Syntax error: expected ':' after the condition.,Add the missing colon.,"if x > 10:
+    print(x)"
+44,Python,print('Hello',SyntaxError,Syntax,CRITICAL,95,Syntax error: closing ')' is missing.,Add the missing closing parenthesis.,print('Hello')
+45,Python,"numbers = [1, 2, 3",SyntaxError,Syntax,CRITICAL,95,Syntax error: closing ']' is missing.,Add the closing bracket.,"numbers = [1, 2, 3]"
+46,Python,"def greet(name)
+    print(name)",SyntaxError,Syntax,CRITICAL,95,Syntax error: expected ':' after function definition.,Add the missing colon.,"def greet(name):
+    print(name)"
+47,Python,"if x > 0:
+print(x)",IndentationError,Syntax,CRITICAL,95,Indentation error: expected an indented block.,Indent the statement inside the if block.,"if x > 0:
+    print(x)"
+48,Python,"def greet():
+print('hi')",IndentationError,Syntax,CRITICAL,95,Indentation error inside function body.,Indent the function body.,"def greet():
+    print('hi')"
+49,Python,"for i in range(3):
+print(i)",IndentationError,Syntax,CRITICAL,95,Indentation error inside for loop.,Indent the loop body.,"for i in range(3):
+    print(i)"
+50,Python,"def test():
+    return 10
+    print('never runs')",UnreachableCode,Code Quality,MEDIUM,50,Code after return is unreachable.,Remove or move the unreachable statement.,"def test():
+    print('runs')
+    return 10"
+51,Python,"def check():
+    raise ValueError()
+    print('done')",UnreachableCode,Code Quality,MEDIUM,50,Code after raise is unreachable.,Remove or move the unreachable statement.,"def check():
+    print('done')
+    raise ValueError()"
+52,Python,"x = 10
+x = 20",RedefinedVariable,Code Quality,LOW,25,Variable x is assigned again before its first value is used.,Remove the redundant assignment or use a meaningful update.,x = 20
+53,Python,"name = 'A'
+name = 'B'",RedefinedVariable,Code Quality,LOW,25,Variable name is redefined.,Remove the redundant assignment if the first value is unnecessary.,name = 'B'
+54,Python,"f = open('data.txt')
+text = f.read()",OpenFileWithoutClose,Resource,MEDIUM,55,File is opened without an explicit close or context manager.,Use a with statement to manage the file resource.,"with open('data.txt') as f:
+    text = f.read()"
+55,Python,"file = open('log.txt', 'w')
+file.write('hello')",OpenFileWithoutClose,Resource,MEDIUM,55,File resource may remain open.,Use a with statement.,"with open('log.txt', 'w') as file:
+    file.write('hello')"
+56,Python,password = 'admin123',HardcodedPassword,Security,HIGH,85,Possible hardcoded password detected.,Use a secure secret store or environment variable.,password = os.getenv('APP_PASSWORD')
+57,Python,db_password = 'secret123',HardcodedPassword,Security,HIGH,85,Possible hardcoded database password detected.,Store credentials outside the source code.,db_password = os.getenv('DB_PASSWORD')
+58,Python,query = 'SELECT * FROM users WHERE name = ' + username,SQLInjectionRisk,Security,CRITICAL,95,Possible SQL injection risk from string concatenation.,Use parameterized queries.,query = 'SELECT * FROM users WHERE name = ?'
+59,Python,query = f'SELECT * FROM users WHERE id = {user_id}',SQLInjectionRisk,Security,CRITICAL,95,Possible SQL injection risk from string formatting.,Use a parameterized database query.,query = 'SELECT * FROM users WHERE id = ?'
+60,Python,"import hashlib
+hashlib.md5(data)",WeakHash,Security,HIGH,80,Weak MD5 hashing detected.,Use a stronger algorithm such as SHA-256 when appropriate.,hashlib.sha256(data)
+61,Python,"import hashlib
+hashlib.sha1(data)",WeakHash,Security,HIGH,80,Weak SHA-1 hashing detected.,Use a stronger hashing algorithm where appropriate.,hashlib.sha256(data)
+62,Python,assert user_id > 0,AssertUsedForValidation,Code Quality,MEDIUM,50,Assert may be disabled with Python optimization and should not be used for security validation.,Use an explicit conditional check.,"if user_id <= 0:
+    raise ValueError('Invalid user_id')"
+63,Python,assert password == expected,AssertUsedForValidation,Code Quality,MEDIUM,50,Assert should not be relied upon for application validation.,Use an explicit condition.,"if password != expected:
+    raise ValueError('Invalid password')"

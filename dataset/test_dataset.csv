@@ -1,0 +1,14 @@
+line_count,character_count,comment_count,string_count,ast_node_count,function_count,class_count,import_count,loop_count,conditional_count,try_count,variable_count,numeric_constant_count,dangerous_function_count,nesting_depth,syntax_valid,error_type
+1,18,0,0,7,0,0,0,0,0,0,0,1,0,4,1,AssertUsedForValidation
+1,54,0,1,9,0,0,0,0,0,0,1,0,0,4,1,SQLInjectionRisk
+1,12,0,0,7,0,0,0,0,0,0,0,0,0,4,1,UndefinedName
+1,13,0,1,0,0,0,0,0,0,0,0,0,0,0,0,SyntaxError
+1,16,0,0,7,0,0,0,0,0,0,0,0,1,4,1,DangerousFunction
+2,32,0,1,8,0,0,0,1,0,0,0,1,0,5,1,InfiniteLoop
+4,43,0,0,12,0,0,0,0,0,1,1,0,0,5,1,BareExcept
+2,41,0,0,14,1,0,0,0,0,0,0,1,0,6,1,MutableDefaultArgument
+1,21,0,0,10,0,0,0,0,0,0,1,0,0,4,1,DivisionByZero
+2,33,0,0,11,0,0,1,0,0,0,0,0,0,5,1,WeakHash
+1,21,0,1,5,0,0,0,0,0,0,1,0,0,3,1,HardcodedPassword
+1,18,0,0,9,0,0,0,0,0,0,1,0,1,4,1,DangerousFunction
+2,20,0,1,7,0,0,0,0,0,0,0,0,0,4,1,BreakOutsideLoop

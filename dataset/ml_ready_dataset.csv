@@ -1,0 +1,64 @@
+line_count,character_count,comment_count,string_count,ast_node_count,function_count,class_count,import_count,loop_count,conditional_count,try_count,variable_count,numeric_constant_count,dangerous_function_count,nesting_depth,syntax_valid,error_type,category,severity,error_score
+1,12,0,0,7,0,0,0,0,0,0,0,0,0,4,1,UndefinedName,Name,MEDIUM,60
+1,15,0,0,7,0,0,0,0,0,0,0,0,0,4,1,UndefinedName,Name,MEDIUM,60
+1,20,0,0,10,0,0,0,0,0,0,1,0,0,4,1,UndefinedName,Name,MEDIUM,60
+1,12,0,0,7,0,0,0,0,0,0,0,0,0,4,1,UndefinedName,Name,MEDIUM,60
+1,28,0,1,9,0,0,0,0,0,0,1,0,0,4,1,UndefinedName,Name,MEDIUM,60
+1,16,0,0,7,0,0,0,0,0,0,0,0,1,4,1,DangerousFunction,Security,CRITICAL,90
+1,10,0,0,7,0,0,0,0,0,0,0,0,1,4,1,DangerousFunction,Security,CRITICAL,90
+1,25,0,0,9,0,0,0,0,0,0,1,0,1,4,1,DangerousFunction,Security,CRITICAL,90
+1,15,0,0,7,0,0,0,0,0,0,0,0,1,4,1,DangerousFunction,Security,CRITICAL,90
+1,18,0,0,9,0,0,0,0,0,0,1,0,1,4,1,DangerousFunction,Security,CRITICAL,90
+3,60,0,0,16,1,0,0,0,0,0,0,1,0,6,1,MutableDefaultArgument,Code Quality,MEDIUM,55
+2,39,0,1,12,1,0,0,0,0,0,1,1,0,5,1,MutableDefaultArgument,Code Quality,MEDIUM,55
+2,41,0,0,14,1,0,0,0,0,0,0,1,0,6,1,MutableDefaultArgument,Code Quality,MEDIUM,55
+2,37,0,0,8,1,0,0,0,0,0,0,0,0,4,1,MutableDefaultArgument,Code Quality,MEDIUM,55
+4,33,0,0,8,0,0,0,0,0,1,0,0,0,5,1,BareExcept,Code Quality,LOW,30
+4,45,0,1,15,0,0,0,0,0,1,1,2,0,6,1,BareExcept,Code Quality,LOW,30
+4,43,0,0,12,0,0,0,0,0,1,1,0,0,5,1,BareExcept,Code Quality,LOW,30
+4,45,0,0,11,0,0,0,0,0,1,0,0,0,6,1,BareExcept,Code Quality,LOW,30
+1,16,0,0,9,0,0,0,0,0,0,1,3,0,3,1,BuiltinShadowing,Code Quality,LOW,25
+1,13,0,1,5,0,0,0,0,0,0,1,0,0,3,1,BuiltinShadowing,Code Quality,LOW,25
+1,10,0,0,5,0,0,0,0,0,0,1,1,0,3,1,BuiltinShadowing,Code Quality,LOW,25
+1,7,0,0,5,0,0,0,0,0,0,1,1,0,3,1,BuiltinShadowing,Code Quality,LOW,25
+1,8,0,0,5,0,0,0,0,0,0,1,1,0,3,1,BuiltinShadowing,Code Quality,LOW,25
+1,15,0,0,8,0,0,0,0,0,0,1,2,0,3,1,DivisionByZero,Runtime,HIGH,80
+1,28,0,0,10,0,0,0,0,0,0,1,0,0,4,1,DivisionByZero,Runtime,HIGH,80
+1,21,0,0,10,0,0,0,0,0,0,1,0,0,4,1,DivisionByZero,Runtime,HIGH,80
+1,19,0,0,10,0,0,0,0,0,0,1,0,0,4,1,DivisionByZero,Runtime,HIGH,80
+1,22,0,1,9,0,0,0,0,0,0,1,0,0,4,1,PossibleTypeError,Type,HIGH,75
+1,21,0,0,10,0,0,0,0,0,0,1,0,0,4,1,PossibleTypeError,Type,HIGH,75
+1,24,0,1,8,0,0,0,0,0,0,1,1,0,3,1,PossibleTypeError,Type,HIGH,75
+1,17,0,1,8,0,0,0,0,0,0,1,1,0,3,1,PossibleTypeError,Type,HIGH,75
+2,30,0,0,14,0,0,0,0,0,0,1,0,0,5,1,PossibleTypeError,Type,HIGH,75
+2,26,0,1,8,0,0,1,0,0,0,0,0,0,4,1,UnusedImport,Code Quality,LOW,20
+2,16,0,0,7,0,0,1,0,0,0,1,1,0,3,1,UnusedImport,Code Quality,LOW,20
+2,31,0,0,8,0,0,1,0,0,0,0,1,0,4,1,UnusedImport,Code Quality,LOW,20
+2,26,0,1,7,0,0,1,0,0,0,1,0,0,3,1,UnusedImport,Code Quality,LOW,20
+2,32,0,1,8,0,0,0,1,0,0,0,1,0,5,1,InfiniteLoop,Control Flow,HIGH,85
+3,32,0,0,17,0,0,0,1,0,0,1,2,0,5,1,InfiniteLoop,Control Flow,HIGH,85
+3,47,0,1,13,0,0,0,1,0,0,1,1,0,5,1,InfiniteLoop,Control Flow,HIGH,85
+3,31,0,0,17,0,0,0,1,0,0,1,2,0,5,1,InfiniteLoop,Control Flow,HIGH,85
+2,20,0,1,7,0,0,0,0,0,0,0,0,0,4,1,BreakOutsideLoop,Control Flow,HIGH,80
+2,23,0,1,7,0,0,0,0,0,0,0,0,0,4,1,ContinueOutsideLoop,Control Flow,HIGH,80
+2,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,SyntaxError,Syntax,CRITICAL,95
+1,13,0,1,0,0,0,0,0,0,0,0,0,0,0,0,SyntaxError,Syntax,CRITICAL,95
+1,18,0,0,0,0,0,0,0,0,0,0,0,0,0,0,SyntaxError,Syntax,CRITICAL,95
+2,31,0,0,0,0,0,0,0,0,0,0,0,0,0,0,SyntaxError,Syntax,CRITICAL,95
+2,18,0,0,0,0,0,0,0,0,0,0,0,0,0,0,IndentationError,Syntax,CRITICAL,95
+2,24,0,1,0,0,0,0,0,0,0,0,0,0,0,0,IndentationError,Syntax,CRITICAL,95
+2,27,0,0,0,0,0,0,0,0,0,0,0,0,0,0,IndentationError,Syntax,CRITICAL,95
+3,49,0,1,10,1,0,0,0,0,0,0,1,0,5,1,UnreachableCode,Code Quality,MEDIUM,50
+3,53,0,1,12,1,0,0,0,0,0,0,0,0,5,1,UnreachableCode,Code Quality,MEDIUM,50
+2,13,0,0,9,0,0,0,0,0,0,2,2,0,3,1,RedefinedVariable,Code Quality,LOW,25
+2,21,0,2,9,0,0,0,0,0,0,2,0,0,3,1,RedefinedVariable,Code Quality,LOW,25
+2,36,0,1,16,0,0,0,0,0,0,2,0,0,5,1,OpenFileWithoutClose,Resource,MEDIUM,55
+2,47,0,3,16,0,0,0,0,0,0,1,0,0,5,1,OpenFileWithoutClose,Resource,MEDIUM,55
+1,21,0,1,5,0,0,0,0,0,0,1,0,0,3,1,HardcodedPassword,Security,HIGH,85
+1,25,0,1,5,0,0,0,0,0,0,1,0,0,3,1,HardcodedPassword,Security,HIGH,85
+1,54,0,1,9,0,0,0,0,0,0,1,0,0,4,1,SQLInjectionRisk,Security,CRITICAL,95
+1,51,0,1,9,0,0,0,0,0,0,1,0,0,5,1,SQLInjectionRisk,Security,CRITICAL,95
+2,32,0,0,11,0,0,1,0,0,0,0,0,0,5,1,WeakHash,Security,HIGH,80
+2,33,0,0,11,0,0,1,0,0,0,0,0,0,5,1,WeakHash,Security,HIGH,80
+1,18,0,0,7,0,0,0,0,0,0,0,1,0,4,1,AssertUsedForValidation,Code Quality,MEDIUM,50
+1,27,0,0,8,0,0,0,0,0,0,0,0,0,4,1,AssertUsedForValidation,Code Quality,MEDIUM,50
